@@ -1,4 +1,8 @@
 #!/bin/bash
-containerId=`docker ps | awk -F " " '{print $1}'`
+containerIds=$(docker ps -q)
 
-docker rm -f $containerId
+if [ -n "$containerIds" ]; then
+  docker rm -f $containerIds
+else
+  echo "No running containers found."
+fi
