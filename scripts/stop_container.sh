@@ -1,8 +1,8 @@
 #!/bin/bash
 containerIds=$(docker ps -q)
 
-if [ -n "$containerIds" ]; then
-  docker rm -f $containerIds
+if [[ -z $containerIds ]]; then
+   echo "There are no containers available"
 else
-  echo "No running containers found."
+   docker rm -f $containerIds
 fi
