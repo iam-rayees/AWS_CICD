@@ -1,10 +1,14 @@
 #!/bin/bash
-set -e
 
-# Stop the running container (if any)
-echo "Hi"
-# containerid=`docker ps | awk -F " " '{print $1}'`
-# docker rm -f $containerid 
+echo "Stopping running containers (if any)..."
 
-#imageid=`docker images | awk -F " " '{print $3}'`
-#docker rmi -f $imageid
+# Get IDs of running containers
+containers=$(docker ps -q)
+
+if [ -n "$containers" ]; then
+  docker stop $containers
+else
+  echo "No running containers found."
+fi
+
+exit 0   # Always succeed for CodeDeploy
