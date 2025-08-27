@@ -1,10 +1,9 @@
 #!/bin/bash
-containerIds=$(docker ps -q)
+containerIds=$(docker ps -aq)
 
 if [[ -z "$containerIds" ]]; then
-   echo "No running containers found."
+   echo "No containers found."
    exit 0
 else
-   docker stop $containerIds
-   docker rm -f $containerIds   
+   docker rm -f $containerIds
 fi
