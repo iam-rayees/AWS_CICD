@@ -1,4 +1,4 @@
-#charles-schwab Python base image
+#charles-schwab Python app image
 FROM python:3.8
 
 # Set the working directory inside the container
