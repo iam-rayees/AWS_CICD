@@ -6,7 +6,7 @@ AWS Code Pipeline
 AWS Code Build
 AWS Deploy
 
-Lets understand complete CICD process using Jenkins as orchestrator:
+𝐋𝐞𝐭𝐬 𝐮𝐧𝐝𝐞𝐫𝐬𝐭𝐚𝐧𝐝 𝐜𝐨𝐦𝐩𝐥𝐞𝐭𝐞 𝐂𝐈𝐂𝐃 𝐩𝐫𝐨𝐜𝐞𝐬𝐬 𝐮𝐬𝐢𝐧𝐠 𝐉𝐞𝐧𝐤𝐢𝐧𝐬 𝐚𝐬 𝐨𝐫𝐜𝐡𝐞𝐬𝐭𝐫𝐚𝐭𝐨𝐫:
 *)Developer will commit changes to the code in the GIT repository.
 
 *)GitHub is configured with Jenkins with the help of Webhooks. This will trigger the Jenkins pipeline.
@@ -25,7 +25,7 @@ Lets understand complete CICD process using Jenkins as orchestrator:
 
 *)A separate git repository is maintained for K8s manifests(pod.yam, deployment.yaml, service.yaml etc). Once a new version of Image is pushed to Image Registry(Dockerhub), This new image tag is updated in K8s manifests git repository with the help of Helm Charts. Then this changes are picked by ARGO CD and deploy on the Kubernetes cluster.  
 
-Lets Replicate this with AWS CICD services:
+𝐋𝐞𝐭𝐬 𝐑𝐞𝐩𝐥𝐢𝐜𝐚𝐭𝐞 𝐭𝐡𝐢𝐬 𝐰𝐢𝐭𝐡 𝐀𝐖𝐒 𝐂𝐈𝐂𝐃 𝐬𝐞𝐫𝐯𝐢𝐜𝐞𝐬:
 *)Developer will push changes to code in AWS Code Commit.
 
 *)This will trigger the AWS Code Pipeline. AWS code pipeline will invoke Continuous integration and also invokes Continuous Delivery process. 
@@ -42,7 +42,7 @@ Note: Continuous integration process can also be proceed with the help of Script
 
 *)Then comes the Continuous delivery process which is carried out with the help of AWS Code Deploy service and Deployment will take place on AWS EC2 or AWS ECS or AWS EKS.
 
-Jenkins vs AWS CICD services:
+𝐉𝐞𝐧𝐤𝐢𝐧𝐬 𝐯𝐬 𝐀𝐖𝐒 𝐂𝐈𝐂𝐃 𝐬𝐞𝐫𝐯𝐢𝐜𝐞𝐬:
 *)Jenkins is open source. We have the flexibility to use Jenkins pipelines on any cloud. We can configure Jenkins with various tools to enhance its abilities. When organization grows with time, There will be some 100s of Jenkins pipelines which requires huge compute resources
 
  and organisation have to allocate a devops engineer to manage these pipelines. 
